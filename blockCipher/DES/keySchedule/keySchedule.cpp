@@ -55,12 +55,14 @@ public:
                 temp[j] = C[j];
                 temp[j + 28] = D[j];
             }
-            for(int j = 0; j < 56; ++j) roundKey[i][j] = temp[PC2[j] - 1];
+            roundKey[i].resize(48);
+            for(int j = 0; j < 48; ++j) roundKey[i][j] = temp[PC2[j] - 1];
         }
+        return;
     }
 
     static vector<bool> getRoundKey(int round) {
-        return roundKey[round];
+        return roundKey[round - 1];
     }
 };
 
