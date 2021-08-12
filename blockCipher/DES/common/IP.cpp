@@ -2,16 +2,17 @@
 using namespace std;
 
 class IP {
+public:
     static int P[64], PInv[64];
 
-    static vector<int> afterIP(const vector<int>& PT) {
-        vector<int> CT(64);
+    static vector<bool> afterIP(const vector<bool>& PT) {
+        vector<bool> CT(64);
         for(int i = 0; i < 64; ++i) CT[i] = PT[P[i] - 1];
         return CT;
     }
 
-    static vector<int> afterIPInv(const vector<int>& CT) {
-        vector<int> PT(64);
+    static vector<bool> afterIPInv(const vector<bool>& CT) {
+        vector<bool> PT(64);
         for(int i = 0; i < 64; ++i) PT[i] = CT[PInv[i] - 1];
         return PT;
     }
