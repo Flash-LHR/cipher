@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
-#include "../keySchedule/keySchedule.cpp"
 using namespace std;
 
 class F {
+public:
     static int E[48], SBox[8][4][16], P[32];
 
     static vector<bool> afterF(vector<bool> R, vector<bool> roundKey) {
@@ -70,9 +70,3 @@ int F::P[32] = {16,  7, 20, 21,
                 32, 27,  3,  9,
                 19, 13, 30,  6,
                 22, 11,  4, 25};
-
-int main()
-{
-
-    return 0;
-}
